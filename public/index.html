@@ -6,9 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-  <title>
-    <%= htmlWebpackPlugin.options.title %>
-  </title>
+  <title>实时****系统</title>
 </head>
 
 <body>
@@ -19,8 +17,12 @@
   <div id="app"></div>
   <!-- built files will be auto injected -->
 
-  <script src="https://cdn.jsdelivr.net/npm/echarts-amap/dist/echarts-amap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/echarts/dist/extension/bmap.min.js"></script>
+  <script>
+    const baseURL = 'http://47.114.190.125:8888/'
+  </script>
+
+  <script src="../src/assets/map/amap.js"></script>
+  <script src="../src/assets/map/bmap.js"></script>
 </body>
 
 </html>

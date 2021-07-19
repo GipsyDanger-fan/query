@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import { setItem } from '@/utils/auth'
 export default {
   name: 'login',
   components: {},
@@ -118,15 +119,16 @@ export default {
       this.$refs.form.validate((valid) => {
         if (valid) {
           const RASpassword = this.$jsEncrypt(this.loginForm.password)
+          console.log(RASpassword);
           const parms = {
             name: this.loginForm.account,
             password: RASpassword
           }
           this.$axios.post('/login', parms).then((res) => {
             if (res.code === 200) {
-              sessionStorage.setItem('token', res.data.token)
-              sessionStorage.setItem('roleName', res.data.token)
-              this.$router.push('/screen')
+              setItem('token', res.data.token)
+              setItem('roleName', res.data.token)
+              this.$router.push('/')
               this.$message.success('操作成功')
             } else {
               this.$message.error('用户名或密码错误')

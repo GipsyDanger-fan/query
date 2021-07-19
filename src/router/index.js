@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import { getItem } from '@/utils/auth'
+import { getItem } from '@/utils/auth'
 
 Vue.use(VueRouter)
 
@@ -13,7 +13,28 @@ const routes = [
     path: '/',
     component: () => import('@/views/home'),
     children: [
-      { path: '/', component: () => import('@/views/home/pages/overall') }
+      { path: '/', component: () => import('@/views/home/pages/overall') },
+      { path: '/list', component: () => import('@/views/home/pages/list/load') },
+      {
+        path: '/details',
+        component: () => import('@/views/home/pages/details'),
+        children: [
+          { path: 'detailed', component: () => import('@/views/home/pages/details/modules/detailed') },
+          { path: 'state', component: () => import('@/views/home/pages/details/modules/state') },
+          { path: 'operate', component: () => import('@/views/home/pages/details/modules/operate') },
+          {
+            path: 'history',
+            component: () => import('@/views/home/pages/details/modules/history'),
+            children: [
+              { path: 'battery-state', component: () => import('@/views/home/pages/details/modules/history/battery-state') },
+              { path: 'host-state', component: () => import('@/views/home/pages/details/modules/history/host-state') },
+              { path: 'sensor-state', component: () => import('@/views/home/pages/details/modules/history/sensor-state') },
+              { path: 'sensor-data', component: () => import('@/views/home/pages/details/modules/history/sensor-data') }
+            ]
+          }
+        ]
+      },
+      { path: '/user', component: () => import('@/views/home/pages/user') }
     ]
   },
   {

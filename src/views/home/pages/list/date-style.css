@@ -1,0 +1,38 @@
+.date-style {
+  border-color: #409eff;
+  background: transparent;
+  color: #409eff;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr th {
+  color: #409eff;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.prev-month {
+  color: #89adc0;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.normal.disabled {
+  background-color: transparent;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.normal.disabled div {
+  background-color: transparent;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.normal.disabled div span {
+  color: #ccc;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.next-month.disabled {
+  background-color: transparent;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.next-month.disabled div {
+  background-color: transparent;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.next-month.disabled div span {
+  color: #ccc;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.prev-month.disabled {
+  background-color: transparent;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.prev-month.disabled div {
+  background-color: transparent;
+}
+.date-style .el-picker-panel__body-wrapper .el-picker-panel__body .el-picker-panel__content .el-date-table tbody tr.el-date-table__row td.prev-month.disabled div span {
+  color: #ccc;
+}

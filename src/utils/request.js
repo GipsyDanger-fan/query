@@ -2,11 +2,13 @@ import axios from 'axios'
 import router from '@/router'
 import { Message } from 'element-ui'
 import { getItem } from '@/utils/auth'
+
+const baseURL = 'http://47.114.190.125:8888/'
 // 创建axios实例
 const service = axios.create({
   //   baseURL: 'http://172.18.0.26:8888/', // api的base_url
   //   baseURL: 'http://117.175.169.58:18888/', // api的base_url
-  baseURL: 'urlApi', // api的base_url
+  baseURL, // api的base_url
   timeout: 500000 // 请求超时时间
 })
 // request拦截器

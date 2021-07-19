@@ -37,39 +37,56 @@
           </el-submenu>
         </el-submenu>
         <el-menu-item index="/user">用户设置</el-menu-item>
-        <div id="user"></div>
+        <div id="user">
+          <div class="icon el-icon-s-custom"></div>
+          <div class="username">电科院网关</div>
+        </div>
       </el-menu>
     </el-header>
     <el-main>
-      <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>活动管理</el-breadcrumb-item>
-        <el-breadcrumb-item>活动列表</el-breadcrumb-item>
-        <el-breadcrumb-item>活动详情</el-breadcrumb-item>
-      </el-breadcrumb>
       <router-view></router-view>
     </el-main>
   </el-container>
 </template>
 
 <script>
+import { setItem, getItem } from "../../utils/auth";
 export default {
-  name: 'app-home',
+  name: "app-home",
   data: function () {
     return {
-      activeIndex: '/'
-    }
+      activeIndex: "/",
+    };
   },
   methods: {
-    handleSelect: function (str1, str2) {
-      console.log(str1, str2)
-    }
-  }
-}
+    handleSelect: function (activeIndex) {
+      this.activeIndex = activeIndex;
+      this.$router.push(activeIndex);
+    },
+  },
+  mounted: function () {
+    // this.activeIndex = this.$route.fullPath
+    this.activeIndex = getItem("path");
+  },
+  watch: {
+    $route: function (newdata) {
+      this.activeIndex = newdata.path;
+      setItem("path", newdata.path);
+    },
+  },
+};
 </script>
+
 
 <style lang="less">
 #app-home {
+  width: 100%;
+  height: 100%;
+  .el-main {
+    width: 100%;
+    height: calc(100vh - 65px);
+    overflow: hidden;
+  }
   .el-header,
   .el-main {
     padding: 0;
@@ -89,7 +106,26 @@ export default {
       width: 150px;
       height: 60px;
       margin-right: 10vw;
-      background-color: #fff;
+      background-color: #09446c;
+      .icon {
+        float: left;
+        width: 30px;
+        height: 30px;
+        line-height: 28px;
+        text-align: center;
+        font-size: 20px;
+        margin-top: 15px;
+        border-radius: 50%;
+        color: #89adc0;
+        border: 1px solid #89adc0;
+      }
+      .username {
+        float: left;
+        margin-left: 15px;
+        color: #89adc0;
+        line-height: 60px;
+        font-size: 16px;
+      }
     }
     .el-breadcrumb {
       height: 20px;
